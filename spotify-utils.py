@@ -9,3 +9,8 @@ def auth(clientID=environ["MOKHA_SPOTIFY_CLIENT_ID"], clientSecret=environ["MOKH
     print(b64)
     headers = {"Authorization": "Bearer %s" % (b64)}
     print(headers)
+
+
+def getCurrentPlayingTrack():
+    auth()
+    print("Getting the currently playing track's URL.")
