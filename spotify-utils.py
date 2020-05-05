@@ -56,4 +56,5 @@ def getCurrentPlayingTrack():
     print("Getting the currently playing track's URL.")
 
 
-getCurrentPlayingTrack()
+if (__name__ == "__main__"):
+    getCurrentPlayingTrack()
