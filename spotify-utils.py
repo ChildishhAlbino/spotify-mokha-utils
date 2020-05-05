@@ -27,7 +27,8 @@ def getCurrentPlayingTrack(username=None):
     auth(username=username)
     if(sp):
         currentTrack = sp.current_playback()
-        if(currentTrack):
+        if (currentTrack):
+            print(currentTrack["item"])
             url = currentTrack["item"]["external_urls"]["spotify"]
             pyperclip.copy(url)
         else:
