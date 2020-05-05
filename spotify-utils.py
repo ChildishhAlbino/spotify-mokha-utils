@@ -17,7 +17,7 @@ def auth(username=None):
     username = environ["SPOTIFY-USERNAME"] if username == None else username
     scope = environ["SPOTIFY-TOKEN-SCOPE"]
     token = util.prompt_for_user_token(
-        username=username
+        username=username,
         scope=scope
     )
     sp = spotipy.Spotify(auth=token)
