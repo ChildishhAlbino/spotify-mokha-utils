@@ -7,7 +7,6 @@ import spotipy
 import spotipy.util as util
 import pyperclip
 
-scope = 'user-library-read user-read-currently-playing user-read-playback-state'
 
 sp = None
 
@@ -28,8 +27,16 @@ def getCurrentPlayingTrack(username=None):
     if(sp):
         currentTrack = sp.current_playback()
         if (currentTrack):
-            print(currentTrack["item"])
-            url = currentTrack["item"]["external_urls"]["spotify"]
+            item = currentTrack["item"]
+            album = item["album"]
+            artist = item["artists"][0]["name"]
+            title = item["name"]
+            print("%s - %s from the album %s." %
+                  (title, artist, album["name"]))
+            url = item["external_urls"]["spotify"]
             pyperclip.copy(url)
         else:
             print("No track currently playing.")
+
+
+getCurrentPlayingTrack()
