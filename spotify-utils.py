@@ -39,4 +39,5 @@ def getCurrentPlayingTrack(username=None):
             print("No track currently playing.")
 
 
-getCurrentPlayingTrack()
+if __name__ == "__main__":
+    getCurrentPlayingTrack()
